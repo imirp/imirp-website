@@ -3,6 +3,13 @@ project/project
 project/target
 target
 tmp
-.classpath
-.project
-bin
+.history
+dist
+/.idea
+/*.iml
+/out
+/.idea_modules
+/.classpath
+/.project
+/RUNNING_PID
+/.settings
