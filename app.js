@@ -28,8 +28,8 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 
-var about = require('./routes/about');
-app.get('/about', about.about);
+var contact = require('./routes/contact');
+app.get('/contact', contact.contact);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Server listening on port ' + app.get('port'));
