@@ -1,5 +1,11 @@
 {
   "version": 2,
   "name": "imirp-website",
+  "alias": ["imirp.org"],
+  "public": true,
+  "github": {
+    "autoAlias": true,
+    "autoJobCancellation": true
+  },
   "builds": [{ "src": "package.json", "use": "@now/next" }]
 }
