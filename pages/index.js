@@ -22,17 +22,25 @@ export default props => {
               predicted target sites simultaneously.
             </p>
 
-            <button className="button">Get Started Now</button>
+            <a className="button" href="http://app.imirp.org/">Get Started Now</a>
           </div>
         </div>
       </section>
       <section className="hero">
         <div className="container">
-          <figure className="image content">
+          <figure className="has-text-centered content"
+            style={{
+              marginTop:"24px"
+            }}>
+
             <img
+            style={{
+              maxWidth:"100%",
+            }}
               src="static/images/ImiRP_Homepage_Illegitimate_sites.jpg"
               alt="ImiRP Illegitimate Sites"
             />
+
           </figure>
           <p className="content">
             ImiRP is a tool that enables researches to input their favourite
