@@ -24,6 +24,7 @@ export default class Layout extends React.Component {
           <title>{this.props.title}</title>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
         </Head>
+        {/* NAV BAR */}
         <div className="navbar" role="navigation" aria-label="main navigation">
 
           <div className="navbar-brand">
@@ -67,7 +68,11 @@ export default class Layout extends React.Component {
             </div>
           </div>
         </div>
+
+        {/*PAGE INJECTED CONTENT */}
         {this.props.children}
+
+        {/* FOOTER SECTION */}
         <footer className="footer">
           <div className="content has-text-centered">
             <p>© ImiRP.org 2018</p>
