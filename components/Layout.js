@@ -2,69 +2,83 @@ import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
-export default props => {
-  return (
-    <React.Fragment>
-      <Head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="" />
-        <title>{props.title}</title>
-        <link
-          rel="stylesheet"
-          href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"
-        />
-      </Head>
-      <style jsx global>
-        {`
-          body {
-            padding: 50px;
-            font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-          }
+export default class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { navActive: false }
+  }
 
-          a {
-            color: #00b7ff;
-          }
-        `}
-      </style>
-      <div className="navbar navbar-default navbar-fixed-top">
-        <div className="container">
-          <div className="navbar-header">
-            <button
-              type="button"
-              className="navbar-toggle"
-              data-toggle="collapse"
-              data-target=".navbar-collapse"
-            >
-              <span className="icon-bar" /> <span className="icon-bar" />{" "}
-              <span className="icon-bar" />
-            </button>
-            <a className="navbar-brand" href="/">
-              ImiRP
+  toggleNavActive = () => {
+    console.log("TEST")
+    this.setState((prev, props) => {
+      return { navActive: !prev.navActive }
+    })
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <Head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>{this.props.title}</title>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+        </Head>
+        {/* NAV BAR */}
+        <div className="navbar" role="navigation" aria-label="main navigation">
+
+          <div className="navbar-brand">
+            {/* LOGO */}
+            <Link href='/'>
+              <a className="navbar-item">
+                ImiRP
+            </a>
+            </Link>
+
+            {/* BURGER MENU */}
+            <a role="button" className={`navbar-burger burger ${this.state.navActive ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false" data-target="navmain" onClick={this.toggleNavActive}>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
             </a>
           </div>
-          <div className="navbar-collapse collapse">
-            <ul className="nav navbar-nav">
-              <li id="about">
-                <Link href="/contact">
-                  <a>Contact Us</a>
-                </Link>
-              </li>
-              <li id="app">
-                <a href="http://app.imirp.org">App</a>
-              </li>
-            </ul>
+
+          {/* LEFT NAV SECTION */}
+          <div id='navmain' className={`navbar-menu ${this.state.navActive ? 'is-active' : ''}`}>
+            <div className="navbar-start">
+              <Link href="/contact">
+                <a className="navbar-item">
+                  Contact Us
+                </a>
+              </Link>
+              <a className="navbar-item" href="http://app.imirp.org">
+                App
+                </a>
+            </div>
+          </div>
+
+          {/* RIGHT NAV SECTION */}
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
+                <a className="link" href="https://github.com/imirp">
+                  <img src="static/images/GitHub-Mark-32px.png" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="container">
-        {props.children}
-        <footer>© ImiRP.org 2018</footer>
-      </div>
-    </React.Fragment>
-  );
+
+        {/*PAGE INJECTED CONTENT */}
+        {this.props.children}
+
+        {/* FOOTER SECTION */}
+        <footer className="footer">
+          <div className="content has-text-centered">
+            <p>© ImiRP.org 2018</p>
+          </div>
+        </footer>
+      </React.Fragment>
+    );
+  }
 };
