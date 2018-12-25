@@ -1,4 +1,5 @@
 import Layout from "../components/Layout";
+import Link from "next/link"
 
 export default props => {
   return (
@@ -23,39 +24,10 @@ export default props => {
             </p>
 
             <a className="button" href="http://app.imirp.org/">Get Started Now</a>
+            <Link href="/about">
+              <a className="button is-info" >Read more about ImiRP</a>
+            </Link>
           </div>
-        </div>
-      </section>
-      <section className="hero">
-        <div className="container">
-          <figure className="has-text-centered content"
-            style={{
-              marginTop:"24px"
-            }}>
-
-            <img
-            style={{
-              maxWidth:"100%",
-            }}
-              src="static/images/ImiRP_Homepage_Illegitimate_sites.jpg"
-              alt="ImiRP Illegitimate Sites"
-            />
-
-          </figure>
-          <p className="content">
-            ImiRP is a tool that enables researches to input their favourite
-            3’UTR DNA or mRNA sequence and specify the species of interest and
-            locations of miRNA target sites they wish to mutate. ImiRP automates
-            the process of specified target site mutagenesis, and identifies and
-            displays up to five mutations that do not generate illegitimate
-            sites. This tool is especially powerful when investigating
-            cooperative regulation of a single transcript by multiple miRNAs,
-            where multi-site mutagenesis may be necessary.
-          </p>
-          <p className="content">
-            All mature miRNA sequence information was provided by the miRBase
-          version 21 high confidence miRNA dataset.
-            </p>
         </div>
       </section>
     </Layout >
