@@ -54,7 +54,12 @@ export default props => {
             All mature miRNA sequence information was provided by the miRBase
             version 21 high confidence miRNA dataset.
           </p>
-          <div className="content">
+          <div
+            className="content"
+            style={{
+              marginTop: "40px"
+            }}
+          >
             <h2>Reference</h2>
             <p>
               Ryan BC, Werner TS, Howard PL, Chow RL. (2016) ImiRP: a
