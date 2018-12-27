@@ -36,7 +36,7 @@ export default props => {
               style={{
                 maxWidth: "100%"
               }}
-              src="static/images/ImiRP_Homepage_Illegitimate_sites.jpg"
+              src="/static/images/ImiRP_Homepage_Illegitimate_sites.jpg"
               alt="ImiRP Illegitimate Sites"
             />
           </figure>
