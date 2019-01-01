@@ -86,6 +86,50 @@ export default props => {
               the 6mer “core” for each MRE to be mutated within the input sequence. For each MRE, this
               represents the nucleotide that is complementary to position 7 of the targeting miRNA. </p>
           </div>
+          <table>
+            <tr>
+              <th>miRNA</th>
+              <th>Site type</th>
+              <th>MRE sequence</th>
+              <th>3'UTR positions</th>
+            </tr>
+            <tr>
+              <td>mmu-miR-7-5p</td>
+              <td>8mer+G:U</td>
+              <td>GTTTTCCA</td>
+              <td>17-22</td>
+            </tr>
+            <tr>
+              <td>mmu-miR-9</td>
+              <td>6mer</td>
+              <td>CCAAAG</td>
+              <td>21-26</td>
+            </tr>
+            <tr>
+              <td>mmu-miR-376c</td>
+              <td>7mer-m8+G:U</td>
+              <td>TTAACAGA</td>
+              <td>45-50</td>
+            </tr>
+            <tr>
+              <td>mmu-miR-450b-5p</td>
+              <td>7mer-A1</td>
+              <td>TGCAAAA</td>
+              <td>50-55</td>
+            </tr>
+            <tr>
+              <td>mmu-miR-129-5p</td>
+              <td>8mer</td>
+              <td>GCAAAAAA</td>
+              <td>52-57</td>
+            </tr>
+            <tr>
+              <td>mmu-miR-329</td>
+              <td>6mer</td>
+              <td>GTGTGT</td>
+              <td>104-109</td>
+            </tr>
+          </table>
           <figure
             className="content"
             style={{
@@ -101,8 +145,10 @@ export default props => {
             />
             <figcaption>
               <strong>
-                Sample sequence showing predicted MREs to be mutated. Underline indicates the 6mer “core” of
-                each MRE, the region into which substitution mutations will be introduced.
+                Sample sequence showing predicted MREs to be mutated. Highlight indicates
+                the 3’UTR region predicted to interact with the miRNA. Underline indicates
+                the 6mer “core” of each MRE, the region into which substitution mutations
+                will be introduced.
               </strong>
             </figcaption>
           </figure>
