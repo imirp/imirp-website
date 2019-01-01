@@ -315,7 +315,7 @@ export default props => {
               style={{
                 maxWidth: "100%"
               }}
-              src="/static\images\guide\imirp_results.PNG"
+              src="/static\images\guide\imirp_results.png"
               alt="Output results"
             />
             <figcaption>
