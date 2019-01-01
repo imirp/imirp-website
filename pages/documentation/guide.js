@@ -183,6 +183,187 @@ export default props => {
             </figcaption>
           </figure>
         </div>
+        <div className="container">
+          <h2 className="subtitle is-3">Define mutation parameters</h2>
+          <div className="content">
+            <p>
+              Once a project has been created, the user is directed to the project page where a mutation request can be submitted.
+              The navigation menu on the left side of the project page presents “Overview”, “Mutate” and “Results” options.
+          </p>
+            <p>
+              The “Overview” option on the project page provides a summary of the information that was input when the project was
+              created.  It also provides information about any mutation requests that have been submitted.  If a mutation request
+              has not been submitted yet, the number “0” appears on the mutation request tab and no information will be available
+              for viewing.
+          </p>
+            <p>
+              The “Mutate” menu option can be used to submit a mutation request for the created project. Once a mutation request
+              has been submitted, results can be accessed using the “Results” menu.
+          </p>
+          </div>
+          <figure
+            className="content"
+            style={{
+              marginTop: "24px"
+            }}
+          >
+            <img
+              style={{
+                maxWidth: "50%"
+              }}
+              src="/static\images\guide\imirp_project_overview.PNG"
+              alt="Project overview"
+            />
+            <figcaption>
+              <strong>
+                Overview of the Sample project showing the navigation side bar on the left-hand side of the page.
+              </strong>
+            </figcaption>
+          </figure>
+          <div className="content">
+            <h3 className="subtitle is-5">Create a mutation request</h3>
+            <p>
+              In the “Mutate” menu, the desired mutation strategy and the invalid MRE site types can be defined. The
+              “Mutation strategy” tab allows the user to define the nucleotides that can be used for introducing
+              substitutions into the mutation sites.  Using the drop-down menu, the user can also specify the number of
+              consecutive nucleotide changes required per mutation site. The program defaults to introducing 2 consecutive
+              nucleotide substitutions per mutation site, using only the nucleobase “G”.
+          </p>
+          </div>
+          <figure
+            className="content"
+            style={{
+              marginTop: "24px"
+            }}
+          >
+            <img
+              style={{
+                maxWidth: "50%"
+              }}
+              src="/static\images\guide\imirp_mutation_strategy.PNG"
+              alt="Mutation strategy"
+            />
+            <figcaption>
+              <strong>
+                Sample project mutation strategy.  This will ensure that three adjacent nucleotide substitutions will be
+                introduced per mutation site using any of the four available nucleotides.
+              </strong>
+            </figcaption>
+          </figure>
+          <div className="content">
+            <p>
+              Next, the “Define Invalid Sites” tab enables the user to specify the MRE types that they want to avoid creating
+              upon mutation of the defined mutation sites.  By clicking on the target site classes listed in the “Invalid site
+              types” and “Valid site types” lists, and using the arrow buttons, users can move target site types between the
+              two lists. Only mutations that do not create new invalid MRE types will be output in the results. However, any MRE
+              types listed as valid may be created upon mutation.
+          </p>
+          </div>
+          <figure
+            className="content"
+            style={{
+              marginTop: "24px"
+            }}
+          >
+            <img
+              style={{
+                maxWidth: "50%"
+              }}
+              src="/static\images\guide\imirp_invalid_sites.PNG"
+              alt="Define invalid sites"
+            />
+            <figcaption>
+              <strong>
+                In the Sample project, 7mer-A1, 8mer and 7mer-m8 MRE types have been defined as invalid.
+              </strong>
+            </figcaption>
+          </figure>
+          <div className="content">
+            <p>
+              Once mutation parameters have been defined, clicking the “Submit Mutation Request” button will begin the generation of
+              mutant sequences that satisfy the input criteria.  The user will be directed to the results menu within the project page.
+          </p>
+          </div>
+          <div className="content">
+            <h2 className="subtitle is-3">Construct a final mutant sequence</h2>
+            <p>Mutation sites and corresponding mutations are displayed in the results menu.</p>
+            <h3 className="subtitle is-5">Select desired mutation(s)</h3>
+            <p>
+              Mutation sites are grouped based on inter-site spacing, with sites spaced less than 7 nucleotides apart being grouped into a
+              single “Region”.  This is performed because 8mer MREs are the largest recognized sites. Therefore, MREs spaced more than 7
+              nucleotides apart can be mutated without generating a new MRE that spans both mutations. The nucleotide position of each region
+              is defined based on the start and end positions of the first and last sites in the region, and the mutation sites are displayed
+              in square brackets.
+          </p>
+            <p>
+              A maximum of five mutations that satisfy the input mutation criteria will be displayed per region.  For each region display box,
+              the original input sequence is displayed above, and the mutated sequences are listed below.
+          </p>
+            <p>
+              To select the desired mutant sequence for each region from the list, click on the select bubble to the left of the mutant sequence.
+              One mutant sequence can be selected per region.  As mutant sequences are selected for each region the region display box will change
+              green and the “Assembled Mutant Sequence” displayed below will be updated to include the specified nucleotide substitutions.
+          </p>
+          </div>
+          <figure
+            className="content"
+            style={{
+              marginTop: "24px"
+            }}
+          >
+            <img
+              style={{
+                maxWidth: "100%"
+              }}
+              src="/static\images\guide\imirp_results.PNG"
+              alt="Output results"
+            />
+            <figcaption>
+              <strong>
+                The 5 mutation sites for the Sample project are divided into three regions based on inter-site spacing. Desired mutants are selected
+                for each region, producing an assembled mutant sequence.
+              </strong>
+            </figcaption>
+          </figure>
+          <div className="content">
+            <p>Once one mutant sequence has been selected per region, clicking the “Download Sequence Analysis” button will enable the user to download
+              a ZIP folder, entitled mutant_analysis.zip, containing a single TXT file and three CSV files.  The TXT file contains the project information,
+              input sequence and final mutant sequence.  The CSV files contain information about the predicted MREs in the input sequence, predicted MREs
+              in the mutant sequence, and all predicted MREs that have been newly created in the mutant sequence.
+            </p>
+            <h3 className="subtitle is-5">Summary and submit new request</h3>
+            <p>
+              Returning to the overview menu reveals that one mutation request has now been submitted, and provides information about the mutation parameters,
+              the total number of mutants generated, and the number of valid mutants generated.
+            </p>
+          </div>
+          <figure
+            className="content"
+            style={{
+              marginTop: "24px"
+            }}
+          >
+            <img
+              style={{
+                maxWidth: "50%"
+              }}
+              src="/static\images\guide\imirp_mutation_requests.PNG"
+              alt="Mutation request summary"
+            />
+            <figcaption>
+              <strong>
+                Summary of the mutation request for the Sample project. A total of 2550 mutants were generated, 33 of which did not create new 7mer-A1, 8mer
+                and 7mer-m8 MRE types.
+              </strong>
+            </figcaption>
+          </figure>
+          <div className="content">
+            <p>
+              If the mutation criteria are too stringent and successful (i.e. valid) mutations are not generated, returning to the mutate menu within the project
+              page will enable to user to specify new mutation parameters and submit a new mutation request.
+          </p>
+          </div>
+        </div>
       </section>
     </Layout>
   );
