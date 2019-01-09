@@ -50,7 +50,7 @@ export default class Layout extends React.Component {
               role="button"
               className={`navbar-burger burger ${
                 this.state.navActive ? "is-active" : ""
-              }`}
+                }`}
               aria-label="menu"
               aria-expanded="false"
               data-target="navmain"
@@ -71,19 +71,11 @@ export default class Layout extends React.Component {
               <Link href="/about">
                 <a className="navbar-item">About</a>
               </Link>
-              <Link href="/documentation">
-                <div className="navbar-item has-dropdown is-hoverable">
-                  <a className="navbar-link">Documentation</a>
-                  <div className="navbar-dropdown">
-                    <Link href="/documentation/publication">
-                      <a className="navbar-item">Publication</a>
-                    </Link>
-                    <Link href="/documentation/guide">
-                      <a className="navbar-item">Guide</a>
-                    </Link>
-                  </div>
-                </div>
+
+              <Link href="/documentation/guide">
+                <a className="navbar-item">Documentation</a>
               </Link>
+
               <Link href="/updates">
                 <a className="navbar-item">Project Updates</a>
               </Link>
