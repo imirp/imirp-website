@@ -11,7 +11,7 @@ export default props => {
             <h2 className="subtitle">Jan 8, 2019</h2>
             <article>
               <p className="content">
-                Added "ImiRP User Guide"
+                Added "ImiRP User Guide" in documentation
             </p>
               <p>BR&TW</p>
             </article>
