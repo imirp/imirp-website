@@ -3,10 +3,32 @@ import Layout from "../../components/Layout";
 export default props => {
   return (
     <Layout title="Documentation">
+
+      {/* TITLE AND TABLE OF CONTENTS */}
+
       <section className="section">
         <div className="container">
-          <h1 className="title is-2">ImiRP User Guide</h1>
-          <h2 className="subtitle is-3">Create a new project</h2>
+          <h1 className="title is-2" style={{
+            marginBottom: "50px"
+          }}>ImiRP User Guide</h1>
+          <h2 className="subtitle is-3">Table of contents</h2>
+          <div className="content">
+            <ul style={{
+              listStyle: "none"
+            }}>
+              <li><a href="#create">Create a new project</a></li>
+              <li><a href="#define">Define mutation parameters</a></li>
+              <li><a href="#construct">Construct a final mutant sequence</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* CREATE NEW PROJECT SECTION */}
+
+      <section className="section">
+        <div className="container">
+          <h2 id="create" className="content subtitle is-3">Create a new project</h2>
           <div className="content">
             <p>
               ImiRP can be used to generate mutants for microRNA recognition
@@ -26,23 +48,21 @@ export default props => {
             </p>
           </div>
           <figure
-            className="content"
+            className="content box"
             style={{
               marginTop: "24px"
             }}
           >
             <img
+              className=""
               style={{
-                maxWidth: "50%"
               }}
               src="/static/images/guide/imirp_project_description.PNG"
               alt="Create sample project"
             />
-            <figcaption>
-              <strong>
-                Creation of “Sample project”, with the goal of mutating 6 MREs
-                in a mouse 3’UTR sequence.
-              </strong>
+            <figcaption className="is-italic">
+              Creation of “Sample project”, with the goal of mutating 6 MREs
+              in a mouse 3’UTR sequence.
             </figcaption>
           </figure>
           <div className="content">
@@ -59,24 +79,23 @@ export default props => {
               </p>
           </div>
           <figure
-            className="content"
+            className="content box"
             style={{
               marginTop: "24px"
             }}
           >
             <img
+              className=""
               style={{
                 maxWidth: "50%"
               }}
               src="/static\images\guide\imirp_sequence_input.PNG"
               alt="Input sequence"
             />
-            <figcaption>
-              <strong>
-                A 150-nucleotide sequence copied into the sequence textbox and displayed for viewing.
-                Beginning to type “mmu”, the 3-letter code for mouse, into the species textbox reveals
-                Mus musculus as one of the species options.
-              </strong>
+            <figcaption className="is-italic">
+              A 150-nucleotide sequence copied into the sequence textbox and displayed for viewing.
+              Beginning to type “mmu”, the 3-letter code for mouse, into the species textbox reveals
+              Mus musculus as one of the species options.
             </figcaption>
           </figure>
           <div className="content">
@@ -131,25 +150,24 @@ export default props => {
             </tr>
           </table>
           <figure
-            className="content"
+            className="content box"
             style={{
               marginTop: "24px"
             }}
           >
             <img
+              className=""
               style={{
                 maxWidth: "50%"
               }}
               src="/static\images\guide\imirp_sample_sequence.PNG"
               alt="Sample sequence"
             />
-            <figcaption>
-              <strong>
-                Sample sequence showing predicted MREs to be mutated. Highlight indicates
-                the 3’UTR region predicted to interact with the miRNA. Underline indicates
-                the 6mer “core” of each MRE, the region into which substitution mutations
-                will be introduced.
-              </strong>
+            <figcaption className="is-italic">
+              Sample sequence showing predicted MREs to be mutated. Highlight indicates
+              the 3’UTR region predicted to interact with the miRNA. Underline indicates
+              the 6mer “core” of each MRE, the region into which substitution mutations
+              will be introduced.
             </figcaption>
           </figure>
           <div className="content">
@@ -162,29 +180,33 @@ export default props => {
             begin specifying mutation parameters.</p>
           </div>
           <figure
-            className="content"
+            className="content box"
             style={{
               marginTop: "24px"
             }}
           >
             <img
+              className=""
               style={{
                 maxWidth: "50%"
               }}
               src="/static\images\guide\imirp_specify_mre.PNG"
               alt="Define MREs"
             />
-            <figcaption>
-              <strong>
-                6 mutation sites are defined in the sample sequence. In this example, the mutation site for miR-7 is listed
-                as (17,22), and is defined in the display sequence as |TTTTCC|. The mutation site for miR-329, starting at
-                position 104, is in the process of being entered.
-              </strong>
+            <figcaption className="is-italic">
+              6 mutation sites are defined in the sample sequence. In this example, the mutation site for miR-7 is listed
+              as (17,22), and is defined in the display sequence as |TTTTCC|. The mutation site for miR-329, starting at
+              position 104, is in the process of being entered.
             </figcaption>
           </figure>
         </div>
+      </section>
+
+      {/* DEFINE MUTATION PARAMETERS */}
+
+      <section className="section">
         <div className="container">
-          <h2 className="subtitle is-3">Define mutation parameters</h2>
+          <h2 id="define" className="subtitle is-3">Define mutation parameters</h2>
           <div className="content">
             <p>
               Once a project has been created, the user is directed to the project page where a mutation request can be submitted.
@@ -202,22 +224,21 @@ export default props => {
           </p>
           </div>
           <figure
-            className="content"
+            className="content box"
             style={{
               marginTop: "24px"
             }}
           >
             <img
+              className=""
               style={{
                 maxWidth: "50%"
               }}
               src="/static\images\guide\imirp_project_overview.PNG"
               alt="Project overview"
             />
-            <figcaption>
-              <strong>
-                Overview of the Sample project showing the navigation side bar on the left-hand side of the page.
-              </strong>
+            <figcaption className="is-italic">
+              Overview of the Sample project showing the navigation side bar on the left-hand side of the page.
             </figcaption>
           </figure>
           <div className="content">
@@ -231,23 +252,22 @@ export default props => {
           </p>
           </div>
           <figure
-            className="content"
+            className="content box"
             style={{
               marginTop: "24px"
             }}
           >
             <img
+              className=""
               style={{
                 maxWidth: "50%"
               }}
               src="/static\images\guide\imirp_mutation_strategy.PNG"
               alt="Mutation strategy"
             />
-            <figcaption>
-              <strong>
-                Sample project mutation strategy.  This will ensure that three adjacent nucleotide substitutions will be
-                introduced per mutation site using any of the four available nucleotides.
-              </strong>
+            <figcaption className="is-italic">
+              Sample project mutation strategy.  This will ensure that three adjacent nucleotide substitutions will be
+              introduced per mutation site using any of the four available nucleotides.
             </figcaption>
           </figure>
           <div className="content">
@@ -260,22 +280,21 @@ export default props => {
           </p>
           </div>
           <figure
-            className="content"
+            className="content box"
             style={{
               marginTop: "24px"
             }}
           >
             <img
+              className=""
               style={{
                 maxWidth: "50%"
               }}
               src="/static\images\guide\imirp_invalid_sites.PNG"
               alt="Define invalid sites"
             />
-            <figcaption>
-              <strong>
-                In the Sample project, 7mer-A1, 8mer and 7mer-m8 MRE types have been defined as invalid.
-              </strong>
+            <figcaption className="is-italic">
+              In the Sample project, 7mer-A1, 8mer and 7mer-m8 MRE types have been defined as invalid.
             </figcaption>
           </figure>
           <div className="content">
@@ -284,8 +303,15 @@ export default props => {
               mutant sequences that satisfy the input criteria.  The user will be directed to the results menu within the project page.
           </p>
           </div>
+        </div>
+      </section>
+
+      {/* CONSTRUCT A FINAL MUTANT SEQUENCE SECTION */}
+
+      <section className="section">
+        <div className="container">
+          <h2 id="construct" className="subtitle is-3">Construct a final mutant sequence</h2>
           <div className="content">
-            <h2 className="subtitle is-3">Construct a final mutant sequence</h2>
             <p>Mutation sites and corresponding mutations are displayed in the results menu.</p>
             <h3 className="subtitle is-5">Select desired mutation(s)</h3>
             <p>
@@ -306,23 +332,22 @@ export default props => {
           </p>
           </div>
           <figure
-            className="content"
+            className="content box"
             style={{
               marginTop: "24px"
             }}
           >
             <img
+              className=""
               style={{
                 maxWidth: "100%"
               }}
               src="/static\images\guide\imirp_results.png"
               alt="Output results"
             />
-            <figcaption>
-              <strong>
-                The 5 mutation sites for the Sample project are divided into three regions based on inter-site spacing. Desired mutants are selected
-                for each region, producing an assembled mutant sequence.
-              </strong>
+            <figcaption className="is-italic">
+              The 5 mutation sites for the Sample project are divided into three regions based on inter-site spacing. Desired mutants are selected
+              for each region, producing an assembled mutant sequence.
             </figcaption>
           </figure>
           <div className="content">
@@ -338,23 +363,22 @@ export default props => {
             </p>
           </div>
           <figure
-            className="content"
+            className="content box"
             style={{
               marginTop: "24px"
             }}
           >
             <img
+              className=""
               style={{
                 maxWidth: "50%"
               }}
               src="/static\images\guide\imirp_mutation_requests.PNG"
               alt="Mutation request summary"
             />
-            <figcaption>
-              <strong>
-                Summary of the mutation request for the Sample project. A total of 2550 mutants were generated, 33 of which did not create new 7mer-A1, 8mer
-                and 7mer-m8 MRE types.
-              </strong>
+            <figcaption className="is-italic">
+              Summary of the mutation request for the Sample project. A total of 2550 mutants were generated, 33 of which did not create new 7mer-A1, 8mer
+              and 7mer-m8 MRE types.
             </figcaption>
           </figure>
           <div className="content">
